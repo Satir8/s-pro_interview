@@ -1,0 +1,23 @@
+@import "./src/styles/variables";
+@import "./src/styles/mixins.scss";
+
+.iconBox {
+  @include flex(row, center, center, nowrap);
+  cursor: pointer;
+  min-width: 30px;
+  height: 30px;
+  border: 1px solid $gray2;
+  border-radius: 4px;
+  margin-right: 8px;
+  transition: all $timeFast ease-in-out;
+  background: $white;
+
+  &:hover {
+    background: $primary1;
+  }
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}

@@ -1,0 +1,6 @@
+@import "./src/styles/mixins.scss";
+
+.title {
+  @include fontInter(24px, 700, 1.3);
+  margin-bottom: 25px;
+}

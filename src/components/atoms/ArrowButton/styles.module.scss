@@ -1,0 +1,34 @@
+@import "./src/styles/variables";
+@import "./src/styles/mixins.scss";
+
+.button {
+  @include btnReset();
+  @include flex(row, center, center, nowrap);
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $white;
+  border: 1px solid $gray3;
+  transition: all $timeFast ease-in-out;
+
+  &:hover {
+    background-color: $primary1;
+    border-color: $primary1;
+
+    .icon {
+      fill: $white;
+    }
+  }
+}
+
+.icon {
+  fill: $primary1;
+  margin-left: -1px;
+  transition: all $timeFast ease-in-out;
+}
+
+.iconReversed {
+  margin-left: 2px;
+  transform: rotate(180deg);
+}

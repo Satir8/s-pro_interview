@@ -1,0 +1,47 @@
+@import "breakpoints";
+
+@mixin flex($flex-direction, $justify-content, $align-items, $flex-wrap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin ulReset() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin btnReset() {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+@mixin inputReset() {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+@mixin fontMontserrat($fontSize, $fontWeight, $lineHeight) {
+  font-family: "Montserrat", sans-serif;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+}
+
+@mixin fontInter($fontSize, $fontWeight, $lineHeight) {
+  font-family: "Inter", sans-serif;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+}
+
+@mixin breakpoint($bp) {
+  @media (min-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
