@@ -25,11 +25,7 @@ const LogoBlock: FC<LogoBlockProps> = ({ onToggle, isOpen }) => {
         </span>
       </Link>
 
-      <ArrowButton
-        isOpen={isOpen}
-        onClick={onToggle}
-        buttonClasses={styles.arrowButton}
-      />
+      <ArrowButton isOpen={isOpen} onClick={onToggle} buttonClasses={styles.arrowButton} />
     </div>
   );
 };

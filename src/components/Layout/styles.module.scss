@@ -11,4 +11,55 @@
   @include flex(column, flex-start, flex-start, nowrap);
   width: 100%;
   margin: 72px 65px 72px 56px;
+  transition: all $timeFast ease-in-out;
+}
+
+@include breakpoint("xs") {
+  .contentWrapper {
+    margin: 72px 65px 72px 45px;
+  }
+
+  .contentSidebarClosed {
+    margin: 72px 75px;
+  }
+}
+
+@include breakpoint("sm") {
+  .contentWrapper {
+    margin: 72px 90px;
+  }
+
+  .contentSidebarClosed {
+    margin: 72px 45px;
+  }
+}
+
+@include breakpoint("md") {
+  .contentWrapper {
+    margin: 72px 65px 72px 56px;
+  }
+
+  .contentSidebarClosed {
+    margin: 72px 65px;
+  }
+}
+
+@include breakpoint("lg") {
+  .contentWrapper {
+    margin: 72px 75px;
+  }
+
+  .contentSidebarClosed {
+    margin: 72px 100px;
+  }
+}
+
+@include breakpoint("xxl") {
+  .contentWrapper {
+    margin: 72px 100px;
+  }
+
+  .contentSidebarClosed {
+    margin: 72px 110px;
+  }
 }

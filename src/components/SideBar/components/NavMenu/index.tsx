@@ -2,11 +2,7 @@ import React, { FC, useState } from "react";
 import cn from "classnames";
 import { NavLink } from "react-router-dom";
 import { NAV_LINKS } from "./constants";
-import {
-  LogoutIconDefault,
-  LogoutIconActive,
-  IconType
-} from "components/Icons";
+import { LogoutIconDefault, LogoutIconActive, IconType } from "components/Icons";
 import styles from "./styles.module.scss";
 
 type NavMenuProps = {
@@ -21,12 +17,7 @@ const NavMenu: FC<NavMenuProps> = ({ isOpen }) => {
           <li key={path} className={styles.navListItem}>
             <NavLink to={path}>
               {({ isActive }) => (
-                <MenuItem
-                  tag="div"
-                  isActive={isActive}
-                  isTitleHidden={!isOpen}
-                  {...rest}
-                />
+                <MenuItem tag='div' isActive={isActive} isTitleHidden={!isOpen} {...rest} />
               )}
             </NavLink>
           </li>
@@ -34,14 +25,14 @@ const NavMenu: FC<NavMenuProps> = ({ isOpen }) => {
       </ul>
 
       <MenuItem
-        tag="button"
+        tag='button'
         isActive={false}
         isTitleHidden={!isOpen}
         icons={{
           default: LogoutIconDefault,
           active: LogoutIconActive
         }}
-        title="Logout"
+        title='Logout'
       />
     </nav>
   );

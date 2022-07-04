@@ -11,13 +11,8 @@ type Props = {
 
 const ArrowButton: FC<Props> = ({ onClick, isOpen, buttonClasses }) => {
   return (
-    <button
-      onClick={onClick}
-      className={cn(styles.button, { [buttonClasses]: buttonClasses })}
-    >
-      <ArrowIcon
-        className={cn(styles.icon, { [styles.iconReversed]: !isOpen })}
-      />
+    <button onClick={onClick} className={cn(styles.button, { [buttonClasses]: buttonClasses })}>
+      <ArrowIcon className={cn(styles.icon, { [styles.iconReversed]: !isOpen })} />
     </button>
   );
 };

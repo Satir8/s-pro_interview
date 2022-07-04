@@ -5,7 +5,7 @@ import { mockedCars } from "./mockData";
 const DashboardPage = () => {
   return (
     <Layout>
-      <PageTitle title="Dashboard" />
+      <PageTitle title='Dashboard' />
       <CarList list={mockedCars} />
     </Layout>
   );

@@ -20,12 +20,7 @@ const Text: FC<Props> = ({ tag, children, sizeClass, color, classes }) => {
   return React.createElement(
     tag,
     {
-      className: cn(
-        { [styles[color]]: color },
-        styles.titleComponent,
-        styles[sizeClass],
-        classes
-      )
+      className: cn({ [styles[color]]: color }, styles.titleComponent, styles[sizeClass], classes)
     },
     children
   );

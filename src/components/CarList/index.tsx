@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
+import cn from "classnames";
 import { InfoBox } from "components";
 import {
   SettingsDefaultIcon,
@@ -9,11 +10,8 @@ import {
   FlagIconActive
 } from "components/Icons";
 import { capitalizeFirstLetter } from "helpers";
-import {
-  ProgressContent,
-  PlannedContent,
-  PartsContent
-} from "./components/InfoRowContents";
+import { LayoutContext } from "../Layout";
+import { ProgressContent, PlannedContent, PartsContent } from "./components/InfoRowContents";
 import InfoRow from "./components/InfoRow";
 import { Car as CarTypes } from "./types";
 import styles from "./styles.module.scss";
@@ -23,8 +21,14 @@ type Props = {
 };
 
 const CarList: FC<Props> = ({ list }) => {
+  const { isSidebarOpen } = useContext(LayoutContext);
+
   return (
-    <ul className={styles.carList}>
+    <ul
+      className={cn(styles.carList, {
+        [styles.carListSidebarClosed]: !isSidebarOpen
+      })}
+    >
       {list.map(({ id, ...rest }, idx) => (
         <CarListItem key={id} count={idx + 1} {...{ ...rest, id }} />
       ))}
@@ -36,24 +40,15 @@ interface CarItemProps extends CarTypes {
   count: number;
 }
 
-const CarListItem: FC<CarItemProps> = ({
-  count,
-  colorTitle,
-  img,
-  progress,
-  planned,
-  parts
-}) => {
+const CarListItem: FC<CarItemProps> = ({ count, colorTitle, img, progress, planned, parts }) => {
   return (
     <li className={styles.carListItem}>
       <InfoBox wrapperClasses={styles.infoBox} />
 
-      <div className={styles.countBox}>{`# ${count} ${capitalizeFirstLetter(
-        colorTitle
-      )}`}</div>
+      <div className={styles.countBox}>{`# ${count} ${capitalizeFirstLetter(colorTitle)}`}</div>
 
       <div className={styles.imgWrapper}>
-        <img src={img} alt={`${colorTitle} car`} className="img-fluid" />
+        <img src={img} alt={`${colorTitle} car`} className='img-fluid' />
       </div>
 
       <InfoRow

@@ -14,20 +14,11 @@ type InfoRowProps = {
   contentClasses?: string;
 };
 
-const InfoRow: FC<InfoRowProps> = ({
-  icons,
-  children,
-  rowClasses,
-  contentClasses
-}) => {
+const InfoRow: FC<InfoRowProps> = ({ icons, children, rowClasses, contentClasses }) => {
   return (
     <div className={cn(styles.row, { [rowClasses]: rowClasses })}>
       <IconBox icons={icons} />
-      <div
-        className={cn(styles.contentBox, { [contentClasses]: contentClasses })}
-      >
-        {children}
-      </div>
+      <div className={cn(styles.contentBox, { [contentClasses]: contentClasses })}>{children}</div>
     </div>
   );
 };

@@ -9,9 +9,7 @@ type IconBoxProps = {
   };
 };
 
-const IconBox: FC<IconBoxProps> = ({
-  icons: { default: DefaultIcon, active: ActiveIcon }
-}) => {
+const IconBox: FC<IconBoxProps> = ({ icons: { default: DefaultIcon, active: ActiveIcon } }) => {
   const [isHovered, setHovered] = useState(false);
 
   return (
@@ -20,11 +18,7 @@ const IconBox: FC<IconBoxProps> = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {isHovered ? (
-        <ActiveIcon className={styles.icon} />
-      ) : (
-        <DefaultIcon className={styles.icon} />
-      )}
+      {isHovered ? <ActiveIcon className={styles.icon} /> : <DefaultIcon className={styles.icon} />}
     </div>
   );
 };
