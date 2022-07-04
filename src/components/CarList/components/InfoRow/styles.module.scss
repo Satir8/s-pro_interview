@@ -1,0 +1,13 @@
+@import "./src/styles/variables";
+@import "./src/styles/mixins.scss";
+
+.row {
+  @include flex(row, flex-start, flex-end, nowrap);
+  width: 100%;
+}
+
+.contentBox {
+  width: 100%;
+  padding-bottom: 6px;
+  border-bottom: 1px solid $gray2;
+}

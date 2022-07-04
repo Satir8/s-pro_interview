@@ -1,0 +1,24 @@
+@import "./src/styles/mixins.scss";
+@import "./src/styles/variables.scss";
+
+.b1 {
+  @include fontInter(14px, 600, 1.3);
+  color: $black;
+}
+
+.b2 {
+  @include fontInter(12px, 400, 1.3);
+  color: $darkGray;
+}
+
+.yellow {
+  color: $infoYellow;
+}
+
+.red {
+  color: $infoRed;
+}
+
+.green {
+  color: $infoGreen;
+}

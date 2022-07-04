@@ -1,0 +1,43 @@
+@import "./src/styles/variables";
+@import "./src/styles/mixins.scss";
+
+.progressContent {
+  @include flex(row, space-between, center, nowrap);
+}
+
+.progressBar {
+  width: 140px;
+  height: 6px;
+  background: $gray2;
+  border-radius: 10px;
+  @include flex(row, flex-start, center, nowrap);
+}
+
+.progressValue {
+  height: 6px;
+  border-radius: 10px;
+}
+
+.progress--yellow {
+  background-color: $infoYellow;
+}
+
+.progress--red {
+  background-color: $infoRed;
+}
+
+.progress--green {
+  background-color: $infoGreen;
+}
+
+.plannedDate {
+  margin-right: 12px;
+}
+
+.partsContent {
+  @include flex(row, flex-start, center, nowrap);
+}
+
+.partsNumber {
+  margin-right: 6px;
+}
